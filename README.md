@@ -120,13 +120,40 @@ To demonstrate practical usability, the trained model is integrated into a **Fla
 This layer bridges the gap between theoretical machine learning models and real-world cybersecurity applications.
 ---
 
-## 8. Model Evaluation
+## 8. Installation & Setup
+
+To run this project on your own system:
+
+ - **Python Environment** : Ensure Python (≥3.8) is installed on your computer. Use a virtual environment to keep dependencies organized.
+ - **Dependencies** : All required Python libraries are listed in requirements.txt. Install them using a Python package manager (like pip).
+ - **Dataset** : The system uses the CICIDS2017 dataset. Place the dataset in the data/ folder. (The dataset is not uploaded due to size constraints.)
+ - **Training Models** : Run the training scripts (model_train.py) to generate trained models in the models/ folder. This step processes the dataset and prepares the hybrid model.
+
+***Notes***
+- Runtime files like uploads/ are generated automatically.
+- Trained models and dataset files are not included in the repo.
+---
+## 9. Code Structure
+
+ddos_detection_system/
+├── preprocessing.py         # Data preprocessing
+├── model_train.py           # Hybrid RF+XGBoost model training
+├── model_comparison.py      # Compare ML models
+├── run_all.py               # Complete training pipeline
+├── app.py                   # Flask web application
+├── requirements.txt         # Python dependencies
+├── README.md                # Project documentation
+├── templates/               # HTML templates for web interface
+└── .gitignore               # Prevents uploading unwanted files
+---
+
+## 10. Model Evaluation
 
 After training the machine learning models, their performance was evaluated using unseen network traffic data. The goal of evaluation was to check how accurately the system can detect DDoS attacks while avoiding false alarms.
 
 Instead of using only accuracy, multiple evaluation measures were considered to understand the overall performance of the system.
 
-### 8.1 Evaluation Metrics
+### 10.1 Evaluation Metrics
 
 - **Accuracy**: Overall correctness of predictions  
 - **Precision**: How many detected attacks were actually attacks  
@@ -135,7 +162,7 @@ Instead of using only accuracy, multiple evaluation measures were considered to 
 
 These metrics are important in DDoS detection because missing an attack or blocking genuine users can both cause serious problems.
 
-### 8.2 Model Performance Comparison
+### 10.2 Model Performance Comparison
 
 | Model                                |Accuracy  | Precision | Recall    | F1-Score |
 | **Hybrid (Random Forest + XGBoost)** | **99%+** | High      | Very High | High     |
@@ -144,7 +171,17 @@ These metrics are important in DDoS detection because missing an attack or block
 | SVM                                  | ~97%     | Moderate  | Moderate  | Moderate |
 ---
 
-### 8.3 Performance Summary
+### 10.3 Evaluation Table 
+
+| Algorithm	      | Accuracy | F1-Score	| Training Time
+| Hybrid (RF+XGB) |	99.52%	 | 99.51%	  | 6.2 min
+| Random Forest   |	99.48%	 | 99.47%	  | 3.1 min
+| XGBoost         |	99.50%	 | 99.49%	  | 4.5 min
+| Neural Network	| 98.91%	 | 98.89%	  | 8.7 min
+| SVM	            | 97.83%	 | 97.81%	  | 12.3 min
+---
+
+### 10.4 Performance Summary
 
 - The **hybrid model** gave the best overall performance.
 - High **recall** means most DDoS attacks were detected.
@@ -154,7 +191,7 @@ These metrics are important in DDoS detection because missing an attack or block
 This evaluation shows that the proposed system is reliable and suitable for practical DDoS detection.
 ---
 
-## 9. Challenges Faced During the Project
+## 11. Challenges Faced During the Project
 
 Several practical challenges were encountered during development:
 
@@ -167,7 +204,7 @@ Several practical challenges were encountered during development:
 Addressing these challenges strengthened both technical and problem-solving skills.
 ---
 
-## 10. Applications of the System
+## 12. Applications of the System
 
 This DDoS detection system can be applied in:
 - Network security monitoring tools
@@ -179,7 +216,7 @@ This DDoS detection system can be applied in:
 The approach is adaptable and can be extended to other types of cyber attacks.
 ---
 
-## 11. Future Scope and Enhancements
+## 13. Future Scope and Enhancements
 
 The project can be extended in several meaningful directions:
 - Real-time packet capture and live traffic monitoring
@@ -192,7 +229,7 @@ The project can be extended in several meaningful directions:
 These improvements can further enhance scalability and real-world applicability.
 ---
 
-## 12. Learning Outcomes
+## 14. Learning Outcomes
 
 Through this project, the following skills were developed:
 - Practical understanding of machine learning in cybersecurity
@@ -203,7 +240,7 @@ Through this project, the following skills were developed:
 - Research-oriented problem-solving approach
 ---
 
-## 13. Conclusion
+## 15. Conclusion
 
 This project demonstrates how machine learning can be effectively applied to detect DDoS attacks in modern networks. By using a hybrid ensemble model and integrating it into a web application, the system achieves high detection accuracy while remaining practical and extensible. The project reflects a strong foundation in machine learning, data analysis, and cybersecurity concepts.
 ---
