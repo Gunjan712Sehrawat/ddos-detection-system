@@ -1,4 +1,5 @@
-DDOS DETECTION - MODEL COMPARISON REPORT
+
+DDOS DETECTION - MODEL COMPARISON REPORT
 
 Random Forest
 
@@ -21,7 +22,7 @@ Accuracy: 0.9988
 F1-Score: 0.9989
 
 Neural Network
---------------------------------------------------------------------------------
 Accuracy: 0.9993
 F1-Score: 0.9994
+
 
